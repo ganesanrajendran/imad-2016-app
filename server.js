@@ -5,7 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne ={
+var articles ={
+ articleOne :{
     title: "Article One By Ganesan Rajendra",
     heading: "Article One",
     content: ` <p>
@@ -21,7 +22,60 @@ var articleOne ={
     
                 </p>`,
     
+},
+ articleTwo :{
+    title: "Article One By Ganesan Rajendra",
+    heading: "Article Two",
+    content: ` <p>
+                    Webtrendz Technologies India Pvt. Ltd(http://www.web-trendz.com) is a privately held company, consisting of a creative and multi-talented team comprised of web designers, web developers and graphic designers.  We provide a wide range of services including web design, web development, mobile application development, web hosting, and consulting.  
+    
+                </p>
+                <p>
+                    Webtrendz Technologies India Pvt. Ltd(http://www.web-trendz.com) is a privately held company, consisting of a creative and multi-talented team comprised of web designers, web developers and graphic designers.  We provide a wide range of services including web design, web development, mobile application development, web hosting, and consulting.  
+    
+                </p>
+                <p>
+                    Webtrendz Technologies India Pvt. Ltd(http://www.web-trendz.com) is a privately held company, consisting of a creative and multi-talented team comprised of web designers, web developers and graphic designers.  We provide a wide range of services including web design, web development, mobile application development, web hosting, and consulting.  
+    
+                </p>
+                <p>
+                    Webtrendz Technologies India Pvt. Ltd(http://www.web-trendz.com) is a privately held company, consisting of a creative and multi-talented team comprised of web designers, web developers and graphic designers.  We provide a wide range of services including web design, web development, mobile application development, web hosting, and consulting.  
+    
+                </p>`
+    
+},
+ articleThree :{
+    title: "Article Three By Ganesan Rajendra",
+    heading: "Article Three",
+    content: ` <p>
+                    Webtrendz Technologies India Pvt. Ltd(http://www.web-trendz.com) is a privately held company, consisting of a creative and multi-talented team comprised of web designers, web developers and graphic designers.  We provide a wide range of services including web design, web development, mobile application development, web hosting, and consulting.  
+    
+                </p>
+                <p>
+                    Webtrendz Technologies India Pvt. Ltd(http://www.web-trendz.com) is a privately held company, consisting of a creative and multi-talented team comprised of web designers, web developers and graphic designers.  We provide a wide range of services including web design, web development, mobile application development, web hosting, and consulting.  
+    
+                </p>
+                <p>
+                    Webtrendz Technologies India Pvt. Ltd(http://www.web-trendz.com) is a privately held company, consisting of a creative and multi-talented team comprised of web designers, web developers and graphic designers.  We provide a wide range of services including web design, web development, mobile application development, web hosting, and consulting.  
+    
+                </p> <p>
+                    Webtrendz Technologies India Pvt. Ltd(http://www.web-trendz.com) is a privately held company, consisting of a creative and multi-talented team comprised of web designers, web developers and graphic designers.  We provide a wide range of services including web design, web development, mobile application development, web hosting, and consulting.  
+    
+                </p>
+                <p>
+                    Webtrendz Technologies India Pvt. Ltd(http://www.web-trendz.com) is a privately held company, consisting of a creative and multi-talented team comprised of web designers, web developers and graphic designers.  We provide a wide range of services including web design, web development, mobile application development, web hosting, and consulting.  
+    
+                </p> <p>
+                    Webtrendz Technologies India Pvt. Ltd(http://www.web-trendz.com) is a privately held company, consisting of a creative and multi-talented team comprised of web designers, web developers and graphic designers.  We provide a wide range of services including web design, web development, mobile application development, web hosting, and consulting.  
+    
+                </p>
+                <p>
+                    Webtrendz Technologies India Pvt. Ltd(http://www.web-trendz.com) is a privately held company, consisting of a creative and multi-talented team comprised of web designers, web developers and graphic designers.  We provide a wide range of services including web design, web development, mobile application development, web hosting, and consulting.  
+    
+                </p>`,
+    
 }
+};
 
 function createTemplate(data){
     var title = data.title;
@@ -67,8 +121,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res) {
- res.send(createTemplate(articleOne));
+app.get('/:articleName', function (req, res) {
+ res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/article-two', function (req, res) {
