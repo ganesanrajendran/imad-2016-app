@@ -25,13 +25,12 @@ var articleOne ={
 
 function createTemplate(data){
     var title = data.title;
-     var heading = data.heading;
-      var content = data.content;
-    
+    var heading = data.heading;
+    var content = data.content;
     var htmlTemplate =
  `<html>
     <head>
-        {title}
+        ${title}
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="/ui/style.css" rel="stylesheet" />
         
@@ -49,10 +48,10 @@ function createTemplate(data){
             </div>
             <hr/>
             <div>
-              {heading}
+              ${heading}
             </div>
             <div>
-              {content}
+              ${content}
             </div>
         </div>
     </body>
@@ -69,7 +68,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/article-one', function (req, res) {
- res.send(articleOne);
+ res.send(createTemplate(articleOne));
 });
 
 app.get('/article-two', function (req, res) {
