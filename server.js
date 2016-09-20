@@ -122,7 +122,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/:articleName', function (req, res) {
-    var artivleName= rec.prams.articleName;
+    var artivleName= rec.params.articleName;
  res.send(createTemplate(articles[articleName]));
 });
 
