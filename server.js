@@ -24,7 +24,7 @@ var articles ={
     
 },
  'article-two' :{
-    title: "Article One By Ganesan Rajendra",
+    title: "Article Two By Ganesan Rajendra",
     heading: "Article Two",
     content: ` <p>
                     Webtrendz Technologies India Pvt. Ltd(http://www.web-trendz.com) is a privately held company, consisting of a creative and multi-talented team comprised of web designers, web developers and graphic designers.  We provide a wide range of services including web design, web development, mobile application development, web hosting, and consulting.  
