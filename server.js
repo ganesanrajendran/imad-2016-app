@@ -5,6 +5,65 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+var articleOne ={
+    title: "Article One By Ganesan Rajendra",
+    heading: "Article One",
+    content: ` <p>
+                    Webtrendz Technologies India Pvt. Ltd(http://www.web-trendz.com) is a privately held company, consisting of a creative and multi-talented team comprised of web designers, web developers and graphic designers.  We provide a wide range of services including web design, web development, mobile application development, web hosting, and consulting.  
+    
+                </p>
+                <p>
+                    Webtrendz Technologies India Pvt. Ltd(http://www.web-trendz.com) is a privately held company, consisting of a creative and multi-talented team comprised of web designers, web developers and graphic designers.  We provide a wide range of services including web design, web development, mobile application development, web hosting, and consulting.  
+    
+                </p>
+                <p>
+                    Webtrendz Technologies India Pvt. Ltd(http://www.web-trendz.com) is a privately held company, consisting of a creative and multi-talented team comprised of web designers, web developers and graphic designers.  We provide a wide range of services including web design, web development, mobile application development, web hosting, and consulting.  
+    
+                </p>`,
+    
+}
+
+function createTemplate(data){
+    var title = data.title;
+     var heading = data.heading;
+      var content = data.content;
+    
+    var htmlTemplate =
+ `<html>
+    <head>
+        {title}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/ui/style.css" rel="stylesheet" />
+        
+         <style>
+         
+      
+        </style>
+    </head>
+   
+    
+    <body>
+        <div class="container">
+            <div>
+                <a href="/">home</a>
+            </div>
+            <hr/>
+            <div>
+              {heading}
+            </div>
+            <div>
+              {content}
+            </div>
+        </div>
+    </body>
+</html>
+`;
+
+return htmlTemplate;
+}
+    
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
