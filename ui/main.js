@@ -18,3 +18,19 @@ button.onclick = function(){
    request.open('GET', "http://ganesanrajendran.imad.hasura-app.io/counter");
    request.send(null);
 };
+
+//Submit Name
+
+var nameInput = document.getElementById("name");
+var name = nameInput.value;
+var submit=document.getelementbyId("submit_btn");
+submit.onclick = function(){
+    var names =['Name1','Name2','Name3'];
+    var list = '';
+    for (var i=0;i<names.length;i++){
+        list+='<li>' + names[i] + '</li>'
+    }
+    var ul=doucment.getElementById('nameList');
+    ul.innerHTML=list;
+    
+};
