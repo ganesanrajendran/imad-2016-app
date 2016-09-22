@@ -4,7 +4,7 @@ element.innerHTML = 'Hi hasura.. Text Changeed';
 
 var elementImg = document.getElementById("img1");
 
-elementImg.onClick = function(){
+elementImg.onclick = function(){
     var intervel = setInterval(marginRight, 100);
 };
 
