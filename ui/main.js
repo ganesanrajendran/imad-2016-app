@@ -1,16 +1,8 @@
-console.log('Loaded!');
-var element = document.getElementById("main-text");
-element.innerHTML = 'Hi hasura.. Text Changeed';
-
-var elementImg = document.getElementById("img1");
-
-elementImg.onclick = function(){
-    var intervel = setInterval(marginRight, 50);
-};
-
-var marginLeft = 0;
-function marginRight()
-{
-    marginLeft=marginLeft + 10;
-    elementImg.style.marginLeft=marginLeft+'px';
+var button = doucment.getElementById("counter");
+button.onclick = function(){
+    
+    
+    counter = counter+ 1;
+    var span = document.getElementById("count");
+    span.innerHtml = counter.toString();
 }
