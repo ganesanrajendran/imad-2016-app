@@ -2,7 +2,7 @@ console.log('Loaded!');
 var element = document.getElementById("main-text");
 element.innerHTML = 'Hi hasura.. Text Changeed';
 
-
+var elementImg = document.getElementById("img1");
 
 elementImg.onClick = function(){
     var intervel = setInterval(marginRight, 100);
@@ -11,7 +11,6 @@ elementImg.onClick = function(){
 var marginLeft = 0;
 function marginRight()
 {
-    var elementImg = document.getElementById("img1");
     marginLeft=marginLeft + 10;
     elementImg.style.marginLeft=marginLeft+'px';
 }
